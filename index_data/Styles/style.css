@@ -1,0 +1,122 @@
+:root {
+  --color: #ffffffd9;
+  --background: #0c0f1d;
+  --border: #3d3f4c;
+  --opacity-color: #ffffff33;
+  --subcolor: #657ef8;
+  --interact-color: #00C864;
+  --import-error: #ff4444;
+  --thumb-bg: #e1e7ff44;
+  --thumb-border: 4px solid transparent;
+  --thumb-hover-bg: #e1e7ff;
+  --header-btns-bg: #444665;
+  --box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.8);
+  --subbg: #1b1d2a;
+  --opacity-bg: rgba(0,0,0,0.7);
+  --alert-shadow: #D10A0A93;
+}
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+*,
+*:hover,
+*:focus,
+*:checked,
+*:checked:after,
+*:disabled,
+*:disabled:after,
+*:after,
+*:before {
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+}
+*.disabled,
+*:disabled {
+  opacity: 0.5;
+  cursor: no-drop !important;
+}
+*::-webkit-scrollbar {
+  width: 16px;
+  background-color: var(--background);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: var(--thumb-bg);
+  border: var(--thumb-border);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--thumb-hover-bg);
+}
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 1px;
+  overflow-x: hidden;
+  color: var(--color);
+  background-color: var(--background);
+}
+body::-webkit-scrollbar-thumb {
+  cursor: n-resize !important;
+}
+footer,
+.footer,
+#footer {
+  width: 95%;
+  height: auto;
+  background-color: var(--subbg);
+  position: relative;
+  margin: 10px 2.5%;
+  border: solid 2px var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+footer img,
+.footer img,
+#footer img {
+  width: auto;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  margin: 0;
+  border-right: solid 1px var(--border);
+}
+footer #txt1footer,
+.footer #txt1footer,
+#footer #txt1footer {
+  height: 100%;
+  width: auto;
+  display: flex;
+  padding-left: 5px;
+  border-left: solid 1px var(--border);
+  font-size: 3vw;
+  flex-direction: column;
+}
+@media screen and (max-width: 376px) {
+  footer #txt1footer,
+  .footer #txt1footer,
+  #footer #txt1footer {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 870px) {
+  footer #txt1footer,
+  .footer #txt1footer,
+  #footer #txt1footer {
+    font-size: 1.2vw;
+  }
+}
