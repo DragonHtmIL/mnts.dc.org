@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="none">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>SMC Pack DC</title>
+    <link rel="stylesheet" href="index_data/Styles/style.css">
+    <link rel="stylesheet" href="index_data/Styles/style_main.css">
+  </head>
+  <body>
+    <header>
+      <div id="title"></div>
+      <div id="plustitle" style="opacity:1;">Pack<span id="plustitlespt" class="spt">DC</span>
+      </div>
+        <div id="plustitleStickers" class="spt-window">Stickers</div>
+        <div id="plustitleAvatars" class="spt-window">Avatars</div>
+        <div id="plustitleWallpapers" class="spt-window">Wallpapers</div>
+      <span id="btnclosewindows" style="margin-top:-52px;">X</span>
+    </header>
+    <div id="main">
+      <button id="btnlocatestickers">Open Stickers</button>
+      <button id="btnlocateavatars">Open Avatars</button>
+      <button id="btnlocatewallpapers">Open Wallpapers</button>
+      <iframe id="iStickers" src="index_stickers.htm" frameborder="0" style="right:-100%;"></iframe>
+      <iframe id="iAvatars" src="index_avatars.htm" frameborder="0" style="right:-100%;"></iframe>
+      <iframe id="iWallpapers" src="index_wallpapers.htm" frameborder="0" style="right:-100%;"></iframe>
+    </div>
+    <footer class="footer" id="footer">
+      <img src="index_data/Textures/netease.png" id="copyrightsNull" alt="Netease">
+      <div id="txt1footer"><div>Privacy Policy, Terms and Conditions</div><div>©1997-<span id="currentYear">...</span> NetEase, Inc.All Rights Reserved</div></div>
+    </footer>
+    <div id="vartime" style="display:none;"></div>
+    <script src="index_data/Scripts/main/open_avatars.js"></script>
+    <script src="index_data/Scripts/main/open_stickers.js"></script>
+    <script src="index_data/Scripts/main/open_wallpapers.js"></script>
+    <script src="index_data/Scripts/wndows_close.js"></script>
+    <script src="index_data/Scripts/errors.js"></script>
+
+    <script src="index_data/Scripts/windows/time.js"></script>
+    <script>
+      window.onerror = function() {
+        unknownError();
+      }
+    </script>
+  </body>
+</html>
