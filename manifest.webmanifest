@@ -1,0 +1,26 @@
+{
+  "name": "SMC Library",
+  "short_name": "SMC Library",
+  "description": "A Library of SMC Wallpapers, Avatars and Stickers.",
+  "scope": "/SMC_Pack_DC/",
+  "start_url": "/SMC_Pack_DC/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/SMC_Pack_DC/index_data/textures/icon_0.png",
+      "type": "image/png",
+      "sizes": "46x46"
+    }
+  ],
+  "locales": ["en","ru","he"],
+  "ru": {
+    "name": "Библиотека SMC",
+    "short_name": "Библиотека SMC"
+  },
+  "he": {
+    "name": "סיפריית SMC",
+    "short_name": "סיפריית SMC"
+  }
+}
