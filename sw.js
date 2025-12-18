@@ -1,6 +1,6 @@
 var GHPATH = '/SMC_Pack_DC';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "1.0.0-18122025";
+let VERSIONNAME = "0.0.1-18122025";
 var VERSION = VERSIONNAME;
 
 var URLS = [
@@ -1050,8 +1050,15 @@ var URLS = [
   `${GHPATH}/index_data/Textures/download.png`,
   `${GHPATH}/index_data/Textures/logo.png`,
   `${GHPATH}/index_data/Textures/netease.png`,
+  `${GHPATH}/index_data/Textures/icon_0.png`,
   `${GHPATH}/index_data/Textures`,
-  `${GHPATH}/index_data`
+  `${GHPATH}/index_data`,
+  `${GHPATH}/index_data/pages/index_avatars.html`,
+  `${GHPATH}/index_data/pages/index_stickers.html`,
+  `${GHPATH}/index_data/pages/index_wallpapers.html`,
+  `${GHPATH}/index_data/pages`,
+  `${GHPATH}/index.html`,
+  `${GHPATH}`
 ];
 
 self.addEventListener('install', event => {
