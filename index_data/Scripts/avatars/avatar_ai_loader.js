@@ -3,7 +3,7 @@ const listAI = [
 ];
 function loadAI() {
   for(var i = 0; i < listAI.length; i++) {
-    var location = "../Resources/Avatars/AI/";
+    var location = "index_data/Resources/Avatars/AI/";
     var format = ".png";
     const list = document.getElementById("AISlist");
     const asset = document.createElement('img');

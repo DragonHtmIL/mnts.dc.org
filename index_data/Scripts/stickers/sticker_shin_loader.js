@@ -3,7 +3,7 @@ const listShin = [
 ];
 function loadShin() {
   for(var i = 0; i < listShin.length; i++) {
-    var location = "../Resources/Stickers/Shin/";
+    var location = "index_data/Resources/Stickers/Shin/";
     var format = ".png";
     const list = document.getElementById("ShinSlist");
     const asset = document.createElement('img');

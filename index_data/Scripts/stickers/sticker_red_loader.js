@@ -3,7 +3,7 @@ const listRED = [
 ];
 function loadRED() {
   for(var i = 0; i < listRED.length; i++) {
-    var location = "../Resources/Stickers/RED/";
+    var location = "index_data/Resources/Stickers/RED/";
     var format = ".png";
     const list = document.getElementById("REDSlist");
     const asset = document.createElement('img');

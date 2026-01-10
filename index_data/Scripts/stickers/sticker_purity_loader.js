@@ -3,7 +3,7 @@ const listPurity = [
 ];
 function loadPurity() {
   for(var i = 0; i < listPurity.length; i++) {
-    var location = "../Resources/Stickers/Purity/";
+    var location = "index_data/Resources/Stickers/Purity/";
     var format = ".png";
     const list = document.getElementById("PuritySlist");
     const asset = document.createElement('img');

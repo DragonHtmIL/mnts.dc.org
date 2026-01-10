@@ -3,7 +3,7 @@ const listVanessa = [
 ];
 function loadVanessa() {
   for(var i = 0; i < listVanessa.length; i++) {
-    var location = "../Resources/Stickers/Vanessa/";
+    var location = "index_data/Resources/Stickers/Vanessa/";
     var format = ".png";
     const list = document.getElementById("VanessaSlist");
     const asset = document.createElement('img');

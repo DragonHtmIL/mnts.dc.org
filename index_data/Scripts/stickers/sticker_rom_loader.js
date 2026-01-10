@@ -5,7 +5,7 @@ const listRom = [
 ];
 function loadRom() {
   for(var i = 0; i < listRom.length; i++) {
-    var location = "../Resources/Stickers/Rom/";
+    var location = "index_data/Resources/Stickers/Rom/";
     var format = ".png";
     const list = document.getElementById("RomSlist");
     const asset = document.createElement('img');

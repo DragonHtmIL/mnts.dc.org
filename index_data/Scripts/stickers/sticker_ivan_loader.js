@@ -4,7 +4,7 @@ const listIvan = [
 ];
 function loadIvan() {
   for(var i = 0; i < listIvan.length; i++) {
-    var location = "../Resources/Stickers/Ivan/";
+    var location = "index_data/Resources/Stickers/Ivan/";
     var format = ".png";
     const list = document.getElementById("IvanSlist");
     const asset = document.createElement('img');

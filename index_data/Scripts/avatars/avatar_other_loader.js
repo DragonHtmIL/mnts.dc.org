@@ -7,7 +7,7 @@ const listOther = [
 ];
 function loadOther() {
   for(var i = 0; i < listOther.length; i++) {
-    var location = "../Resources/Avatars/Other/";
+    var location = "index_data/Resources/Avatars/Other/";
     var format = ".png";
     const list = document.getElementById("OtherSlist");
     const asset = document.createElement('img');

@@ -4,7 +4,7 @@ const listIori = [
 ];
 function loadIori() {
   for(var i = 0; i < listIori.length; i++) {
-    var location = "../Resources/Stickers/Iori/";
+    var location = "index_data/Resources/Stickers/Iori/";
     var format = ".png";
     const list = document.getElementById("IoriSlist");
     const asset = document.createElement('img');

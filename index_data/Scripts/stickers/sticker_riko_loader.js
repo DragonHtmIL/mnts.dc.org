@@ -6,7 +6,7 @@ const listRiko = [
 ];
 function loadRiko() {
   for(var i = 0; i < listRiko.length; i++) {
-    var location = "../Resources/Stickers/Riko/";
+    var location = "index_data/Resources/Stickers/Riko/";
     var format = ".png";
     const list = document.getElementById("RikoSlist");
     const asset = document.createElement('img');

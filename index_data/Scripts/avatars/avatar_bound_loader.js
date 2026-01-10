@@ -5,7 +5,7 @@ const listBound = [
 ];
 function loadBound() {
   for(var i = 0; i < listBound.length; i++) {
-    var location = "../Resources/Avatars/Bound/";
+    var location = "index_data/Resources/Avatars/Bound/";
     var format = ".png";
     const list = document.getElementById("BoundSlist");
     const asset = document.createElement('img');

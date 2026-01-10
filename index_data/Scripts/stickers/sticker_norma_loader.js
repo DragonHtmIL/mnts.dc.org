@@ -3,7 +3,7 @@ const listNorma = [
 ];
 function loadNorma() {
   for(var i = 0; i < listNorma.length; i++) {
-    var location = "../Resources/Stickers/Norma/";
+    var location = "index_data/Resources/Stickers/Norma/";
     var format = ".png";
     const list = document.getElementById("NormaSlist");
     const asset = document.createElement('img');

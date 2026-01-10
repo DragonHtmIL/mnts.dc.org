@@ -6,7 +6,7 @@ const listmDef = [
 ];
 function loadmDef() {
   for(var i = 0; i < listmDef.length; i++) {
-    var location = "../Resources/Avatars/mDef/";
+    var location = "index_data/Resources/Avatars/mDef/";
     var format = ".png";
     const list = document.getElementById("mDefSlist");
     const asset = document.createElement('img');

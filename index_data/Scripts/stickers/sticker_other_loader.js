@@ -11,7 +11,7 @@ const listOther = [
 ];
 function loadOther() {
   for(var i = 0; i < listOther.length; i++) {
-    var location = "../Resources/Stickers/Other/";
+    var location = "index_data/Resources/Stickers/Other/";
     var format = ".png";
     const list = document.getElementById("OtherSlist");
     const asset = document.createElement('img');

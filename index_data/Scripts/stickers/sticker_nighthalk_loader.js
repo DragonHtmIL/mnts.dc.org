@@ -3,7 +3,7 @@ const listNighthalk = [
 ];
 function loadNighthalk() {
   for(var i = 0; i < listNighthalk.length; i++) {
-    var location = "../Resources/Stickers/Nighthalk/";
+    var location = "index_data/Resources/Stickers/Nighthalk/";
     var format = ".png";
     const list = document.getElementById("NighthalkSlist");
     const asset = document.createElement('img');

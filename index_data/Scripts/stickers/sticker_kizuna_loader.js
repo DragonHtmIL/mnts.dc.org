@@ -4,7 +4,7 @@ const listKizuna = [
 ];
 function loadKizuna() {
   for(var i = 0; i < listKizuna.length; i++) {
-    var location = "../Resources/Stickers/Kizuna/";
+    var location = "index_data/Resources/Stickers/Kizuna/";
     var format = ".png";
     const list = document.getElementById("KizunaSlist");
     const asset = document.createElement('img');

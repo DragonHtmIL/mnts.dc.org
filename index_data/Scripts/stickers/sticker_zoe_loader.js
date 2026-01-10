@@ -3,7 +3,7 @@ const listZoe = [
 ];
 function loadZoe() {
   for(var i = 0; i < listZoe.length; i++) {
-    var location = "../Resources/Stickers/Zoe/";
+    var location = "index_data/Resources/Stickers/Zoe/";
     var format = ".png";
     const list = document.getElementById("ZoeSlist");
     const asset = document.createElement('img');

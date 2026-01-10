@@ -3,7 +3,7 @@ const listSilver = [
 ];
 function loadSilver() {
   for(var i = 0; i < listSilver.length; i++) {
-    var location = "../Resources/Stickers/Silver/";
+    var location = "index_data/Resources/Stickers/Silver/";
     var format = ".png";
     const list = document.getElementById("SilverSlist");
     const asset = document.createElement('img');

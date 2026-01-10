@@ -3,7 +3,7 @@ const listCyrus = [
 ];
 function loadCyrus() {
   for(var i = 0; i < listCyrus.length; i++) {
-    var location = "../Resources/Stickers/Cyrus/";
+    var location = "index_data/Resources/Stickers/Cyrus/";
     var format = ".png";
     const list = document.getElementById("CyrusSlist");
     const asset = document.createElement('img');

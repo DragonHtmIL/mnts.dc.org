@@ -3,7 +3,7 @@ const listSerena = [
 ];
 function loadSerena() {
   for(var i = 0; i < listSerena.length; i++) {
-    var location = "../Resources/Stickers/Serena/";
+    var location = "index_data/Resources/Stickers/Serena/";
     var format = ".png";
     const list = document.getElementById("SerenaSlist");
     const asset = document.createElement('img');

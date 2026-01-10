@@ -11,7 +11,7 @@ const listEventsP = [
 ];
 function loadEventsP() {
   for(var i = 0; i < listEventsP.length; i++) {
-    var location = "../Resources/Avatars/EventsP/";
+    var location = "index_data/Resources/Avatars/EventsP/";
     var format = ".png";
     const list = document.getElementById("EventsPSlist");
     const asset = document.createElement('img');

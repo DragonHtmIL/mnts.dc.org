@@ -4,7 +4,7 @@ const listGeneral = [
 ];
 function loadGeneral() {
   for(var i = 0; i < listGeneral.length; i++) {
-    var location = "../Resources/Stickers/General/";
+    var location = "index_data/Resources/Stickers/General/";
     var format = ".png";
     const list = document.getElementById("GeneralSlist");
     const asset = document.createElement('img');

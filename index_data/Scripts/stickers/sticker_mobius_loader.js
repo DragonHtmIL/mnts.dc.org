@@ -3,7 +3,7 @@ const listMobius = [
 ];
 function loadMobius() {
   for(var i = 0; i < listMobius.length; i++) {
-    var location = "../Resources/Stickers/Mobius/";
+    var location = "index_data/Resources/Stickers/Mobius/";
     var format = ".png";
     const list = document.getElementById("MobiusSlist");
     const asset = document.createElement('img');

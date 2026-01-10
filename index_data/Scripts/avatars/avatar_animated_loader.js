@@ -4,7 +4,7 @@ const listAnimated = [
 ];
 function loadAnimated() {
   for(var i = 0; i < listAnimated.length; i++) {
-    var location = "../Resources/Avatars/Animated/";
+    var location = "index_data/Resources/Avatars/Animated/";
     var format = ".gif";
     const list = document.getElementById("AnimatedSlist");
     const asset = document.createElement('img');

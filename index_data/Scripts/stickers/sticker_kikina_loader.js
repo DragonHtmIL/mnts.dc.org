@@ -3,7 +3,7 @@ const listKikina = [
 ];
 function loadKikina() {
   for(var i = 0; i < listKikina.length; i++) {
-    var location = "../Resources/Stickers/Kikina/";
+    var location = "index_data/Resources/Stickers/Kikina/";
     var format = ".png";
     const list = document.getElementById("KikinaSlist");
     const asset = document.createElement('img');

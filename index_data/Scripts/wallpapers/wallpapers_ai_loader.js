@@ -10,7 +10,7 @@ let currentAIPage = 1;
 function displayAIWallpapers(aipage) {
   const container = document.getElementById("AISlist");
   const format = ".png";
-  const location = "../Resources/Wallpapers/AI/";
+  const location = "index_data/Resources/Wallpapers/AI/";
   container.innerHTML = ""; // Clear existing wallpapers
 
   const startIndex = (aipage - 1) * wallpapersAIPerPage;

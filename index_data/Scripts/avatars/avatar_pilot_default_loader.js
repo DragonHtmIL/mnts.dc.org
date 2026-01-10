@@ -6,7 +6,7 @@ const listpDef = [
 ];
 function loadpDef() {
   for(var i = 0; i < listpDef.length; i++) {
-    var location = "../Resources/Avatars/pDef/";
+    var location = "index_data/Resources/Avatars/pDef/";
     var format = ".png";
     const list = document.getElementById("pDefSlist");
     const asset = document.createElement('img');

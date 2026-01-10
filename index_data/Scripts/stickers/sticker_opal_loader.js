@@ -3,7 +3,7 @@ const listOpal = [
 ];
 function loadOpal() {
   for(var i = 0; i < listOpal.length; i++) {
-    var location = "../Resources/Stickers/Opal/";
+    var location = "index_data/Resources/Stickers/Opal/";
     var format = ".png";
     const list = document.getElementById("OpalSlist");
     const asset = document.createElement('img');

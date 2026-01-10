@@ -4,7 +4,7 @@ const listJoanna = [
 ];
 function loadJoanna() {
   for(var i = 0; i < listJoanna.length; i++) {
-    var location = "../Resources/Stickers/Joanna/";
+    var location = "index_data/Resources/Stickers/Joanna/";
     var format = ".png";
     const list = document.getElementById("JoannaSlist");
     const asset = document.createElement('img');

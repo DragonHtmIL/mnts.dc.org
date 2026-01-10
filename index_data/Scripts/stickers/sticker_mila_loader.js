@@ -3,7 +3,7 @@ const listMila = [
 ];
 function loadMila() {
   for(var i = 0; i < listMila.length; i++) {
-    var location = "../Resources/Stickers/Mila/";
+    var location = "index_data/Resources/Stickers/Mila/";
     var format = ".png";
     const list = document.getElementById("MilaSlist");
     const asset = document.createElement('img');

@@ -8,7 +8,7 @@ const listEmoji = [
 ];
 function loadEmoji() {
   for(var i = 0; i < listEmoji.length; i++) {
-    var location = "../Resources/Stickers/Emoji/";
+    var location = "index_data/Resources/Stickers/Emoji/";
     var format = ".png";
     const list = document.getElementById("EmojiSlist");
     const asset = document.createElement('img');

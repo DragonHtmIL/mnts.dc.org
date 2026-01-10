@@ -5,7 +5,7 @@ const listNing = [
 ];
 function loadNing() {
   for(var i = 0; i < listNing.length; i++) {
-    var location = "../Resources/Stickers/Ning/";
+    var location = "index_data/Resources/Stickers/Ning/";
     var format = ".png";
     const list = document.getElementById("NingSlist");
     const asset = document.createElement('img');

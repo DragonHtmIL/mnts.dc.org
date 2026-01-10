@@ -3,7 +3,7 @@ const listVillar = [
 ];
 function loadVillar() {
   for(var i = 0; i < listVillar.length; i++) {
-    var location = "../Resources/Stickers/Villar/";
+    var location = "index_data/Resources/Stickers/Villar/";
     var format = ".png";
     const list = document.getElementById("VillarSlist");
     const asset = document.createElement('img');

@@ -3,7 +3,7 @@ const listVita = [
 ];
 function loadVita() {
   for(var i = 0; i < listVita.length; i++) {
-    var location = "../Resources/Stickers/Vita/";
+    var location = "index_data/Resources/Stickers/Vita/";
     var format = ".png";
     const list = document.getElementById("VitaSlist");
     const asset = document.createElement('img');

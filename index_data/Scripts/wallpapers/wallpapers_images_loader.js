@@ -54,7 +54,7 @@ let currentPage = 1;
 function displayWallpapers(page) {
   const container = document.getElementById("imagesSlist");
   const format = ".png";
-  const location = "../Resources/Wallpapers/";
+  const location = "index_data/Resources/Wallpapers/";
   container.innerHTML = ""; // Clear existing wallpapers
 
   const startIndex = (page - 1) * wallpapersPerPage;

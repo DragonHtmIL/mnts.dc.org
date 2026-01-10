@@ -3,7 +3,7 @@ const listJiu = [
 ];
 function loadJiu() {
   for(var i = 0; i < listJiu.length; i++) {
-    var location = "../Resources/Stickers/Jiu/";
+    var location = "index_data/Resources/Stickers/Jiu/";
     var format = ".png";
     const list = document.getElementById("JiuSlist");
     const asset = document.createElement('img');

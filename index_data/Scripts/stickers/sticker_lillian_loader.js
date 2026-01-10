@@ -3,7 +3,7 @@ const listLillian = [
 ];
 function loadLillian() {
   for(var i = 0; i < listLillian.length; i++) {
-    var location = "../Resources/Stickers/Lillian/";
+    var location = "index_data/Resources/Stickers/Lillian/";
     var format = ".png";
     const list = document.getElementById("LillianSlist");
     const asset = document.createElement('img');

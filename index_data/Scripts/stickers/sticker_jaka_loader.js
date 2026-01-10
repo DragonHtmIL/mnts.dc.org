@@ -3,7 +3,7 @@ const listJaka = [
 ];
 function loadJaka() {
   for(var i = 0; i < listJaka.length; i++) {
-    var location = "../Resources/Stickers/Jaka/";
+    var location = "index_data/Resources/Stickers/Jaka/";
     var format = ".png";
     const list = document.getElementById("JakaSlist");
     const asset = document.createElement('img');

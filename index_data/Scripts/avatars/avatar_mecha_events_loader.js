@@ -8,7 +8,7 @@ const listEventsM = [
 ];
 function loadEventsM() {
   for(var i = 0; i < listEventsM.length; i++) {
-    var location = "../Resources/Avatars/EventsM/";
+    var location = "index_data/Resources/Avatars/EventsM/";
     var format = ".png";
     const list = document.getElementById("EventsMSlist");
     const asset = document.createElement('img');
