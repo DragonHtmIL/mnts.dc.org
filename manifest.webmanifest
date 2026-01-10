@@ -2,8 +2,8 @@
   "name": "SMC Library",
   "short_name": "SMC Library",
   "description": "A Library of SMC Wallpapers, Avatars and Stickers.",
-  "scope": "/SMC_Pack_DC/",
-  "start_url": "/SMC_Pack_DC/",
+  "scope": "/mnts.dc.org/",
+  "start_url": "/mnts.dc.org/",
   "display": "fullscreen",
   "orientation": "portrait",
   "lang": "en",
@@ -11,7 +11,7 @@
   "background_color": "#000000",
   "icons": [
     {
-      "src": "/SMC_Pack_DC/index_data/textures/icon_0.png",
+      "src": "/mnts.dc.org/index_data/textures/icon_0.png",
       "type": "image/png",
       "sizes": "64x64",
       "purpose": "any maskable"

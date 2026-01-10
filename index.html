@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>SMC Pack DC</title>
-    <link rel="canonical" href="https://dragonhtmil.github.io/SMC_Pack_DC/">
+    <link rel="canonical" href="https://dragonhtmil.github.io/mnts.dc.org/">
     <link rel="manifest" href="" id="manifestTestLoad">
     <link rel="stylesheet" href="index_data/Styles/style.css">
     <link rel="stylesheet" href="index_data/Styles/style_main.css">
@@ -48,14 +48,14 @@
     <script>
       if(navigator.serviceWorker) {
         if(window.location.protocol === 'https:') {
-          navigator.serviceWorker.register('/SMC_Pack_DC/sw.js',{scope: '/SMC_Pack_DC/'})
+          navigator.serviceWorker.register('/mnts.dc.org/sw.js',{scope: '/mnts.dc.org/'})
           .then(registration => {
             console.log('Service Worker registered with scope:', registration.scope);
           })
           .catch(error => {
             return false
           });
-          document.getElementById("manifestTestLoad").setAttribute('href','/SMC_Pack_DC/manifest.webmanifest');
+          document.getElementById("manifestTestLoad").setAttribute('href','/mnts.dc.org/manifest.webmanifest');
         }else
         if (window.location.protocol === 'file:') {
           // Potentially register service worker for local file access (USE WITH CAUTION)
