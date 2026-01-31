@@ -1,4 +1,4 @@
-const listOther = [
+const listOthersticker = [
 "0000024E","00000175","00001462","00001567","00001791","00004212","00004441","00005626","00005843","00005940",
 "00005990","00005996","00006012","00006017","00006022","00006512","00006534","00006535","00006726","00006847",
 "00007011","00007071","00007200","00007496","00007911","00007930","00007975","00008083_0","00008114","00008419",
@@ -10,13 +10,13 @@ const listOther = [
 "00017842","00017871","00017982","00018147","00018322","00020918","00021620"
 ];
 function loadOther() {
-  for(var i = 0; i < listOther.length; i++) {
+  for(var i = 0; i < listOthersticker.length; i++) {
     var location = "index_data/Resources/Stickers/Other/";
     var format = ".png";
     const list = document.getElementById("OtherSlist");
     const asset = document.createElement('img');
-    asset.classList = "sticker";
-    asset.src = location + listOther[i] + format;
+    asset.className = "sticker";
+    asset.src = location + listOthersticker[i] + format;
     asset.setAttribute("alt", i);
     asset.onclick = function() {
       showImage(this);

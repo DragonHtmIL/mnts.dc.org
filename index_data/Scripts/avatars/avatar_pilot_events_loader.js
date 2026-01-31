@@ -1,4 +1,4 @@
-const listEventsP = [
+const listEventsPavatar = [
 "00000099","00000208","00000416","00000437","00000446","00000497","00001456","00001716","00001969","00001984",
 "00002005","00002097","00002103","00002182","00002355","00002501","00002555","00002725","00002973","00003263",
 "00003389","00003546","00003822","00003962","00004460","00004612","00004646","00004869","00005015","00005136",
@@ -10,13 +10,13 @@ const listEventsP = [
 "00020592","00020894"
 ];
 function loadEventsP() {
-  for(var i = 0; i < listEventsP.length; i++) {
+  for(var i = 0; i < listEventsPavatar.length; i++) {
     var location = "index_data/Resources/Avatars/EventsP/";
     var format = ".png";
     const list = document.getElementById("EventsPSlist");
     const asset = document.createElement('img');
-    asset.classList = "sticker";
-    asset.src = location + listEventsP[i] + format;
+    asset.className = "avatar";
+    asset.src = location + listEventsPavatar[i] + format;
     asset.setAttribute("alt", i);
     asset.onclick = function() {
       showImage(this);

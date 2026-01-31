@@ -8,7 +8,7 @@ const wallpapersAIPerPage = 10;
 let currentAIPage = 1;
 
 function displayAIWallpapers(aipage) {
-  const container = document.getElementById("AISlist");
+  const container = document.getElementById("AISlistWallpapers");
   const format = ".png";
   const location = "index_data/Resources/Wallpapers/AI/";
   container.innerHTML = ""; // Clear existing wallpapers
@@ -20,6 +20,7 @@ function displayAIWallpapers(aipage) {
   pageWallpapers.forEach((aIwallpaper) => {
     const img = document.createElement("img");
     img.src = location + aIwallpaper.url + format; // or wallpaper
+    img.className = "wallpaper";
     container.appendChild(img);
     img.addEventListener('click', function() {
       showImage(this);
@@ -35,21 +36,24 @@ function displayAIPagination() {
 
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement("span");
-    var element = document.getElementById("categories");
+    const element = document.getElementById("AISlistWallpapers");
     button.className = "pagination-ai";
     button.textContent = i;
     button.setAttribute('id', 'numAI' + [i]);
     button.addEventListener("click", evt => {
       currentAIPage = i;
-      displayAIWallpapers(currentAIPage);
-      activePagination(evt);
-      element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+      if(button.classList.contains('active')) {
+        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"});
+      }else{
+        displayAIWallpapers(currentAIPage);
+        activePaginationAi(evt);
+      };
     });
     pagination.appendChild(button);
   }
 }
 
-function activePagination(evt) {
+function activePaginationAi(evt) {
   var pagination;
   pagination = document.getElementsByClassName("pagination-ai");
   for (i = 0; i < pagination.length; i++) {

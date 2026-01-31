@@ -1,14 +1,14 @@
-const listLillian = [
+const listLilliansticker = [
 "0000024E","00006052","00009486","00012859"
 ];
 function loadLillian() {
-  for(var i = 0; i < listLillian.length; i++) {
+  for(var i = 0; i < listLilliansticker.length; i++) {
     var location = "index_data/Resources/Stickers/Lillian/";
     var format = ".png";
     const list = document.getElementById("LillianSlist");
     const asset = document.createElement('img');
-    asset.classList = "sticker";
-    asset.src = location + listLillian[i] + format;
+    asset.className = "sticker";
+    asset.src = location + listLilliansticker[i] + format;
     asset.setAttribute("alt", i);
     asset.onclick = function() {
       showImage(this);

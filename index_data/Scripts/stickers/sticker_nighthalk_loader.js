@@ -1,14 +1,14 @@
-const listNighthalk = [
+const listNighthalksticker = [
 "00011633"
 ];
 function loadNighthalk() {
-  for(var i = 0; i < listNighthalk.length; i++) {
+  for(var i = 0; i < listNighthalksticker.length; i++) {
     var location = "index_data/Resources/Stickers/Nighthalk/";
     var format = ".png";
     const list = document.getElementById("NighthalkSlist");
     const asset = document.createElement('img');
-    asset.classList = "sticker";
-    asset.src = location + listNighthalk[i] + format;
+    asset.className = "sticker";
+    asset.src = location + listNighthalksticker[i] + format;
     asset.setAttribute("alt", i);
     asset.onclick = function() {
       showImage(this);
