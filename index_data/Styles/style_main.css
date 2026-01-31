@@ -99,17 +99,29 @@ button:hover {
   top: 0;
   left: 130px;
 }
-iframe {
+#iStickers,
+#iAvatars,
+#iWallpapers {
   width: 100%;
   height: calc(100% - 50px);
   border: none;
   position: fixed;
   bottom: 0;
+  display: flex;
+  background-color: var(--background);
   z-index: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 footer,
 .footer,
 #footer {
   position: fixed;
   bottom: 0;
+}
+@media screen and (max-width: 500px) {
+  #iStickers,
+  #iAvatars {
+    flex-direction: row;
+  }
 }
