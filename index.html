@@ -9,6 +9,103 @@
     <link rel="manifest" href="" id="manifestTestLoad">
     <link rel="stylesheet" href="index_data/Styles/style.css">
     <link rel="stylesheet" href="index_data/Styles/style_main.css">
+    <link rel="stylesheet" href="index_data/styles/style_windows.css">
+    <style>
+      img.avatar {
+        width: calc(20% - 10px);
+        margin: 5px;
+      }
+      img.sticker {
+        width: calc(20% - 10px);
+        margin: 5px;
+      }
+      img.wallpaper {
+        max-width: 60%;
+        height: auto;
+        margin: 2px auto;
+      }
+      img.avatar:hover {
+        width: 20%;
+        margin: 0px;
+        filter: drop-shadow(0px 0px 6px var(--background));
+      }
+      img.sticker:hover {
+        width: 20%;
+        margin: 0px;
+        filter: drop-shadow(0px 0px 6px var(--background));
+      }
+      img.wallpaper:hover {
+        filter: drop-shadow(0px 0px 6px var(--background));
+      }
+      #imgpagination,
+      #vidpagination,
+      #aipagination {
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        display: none;
+      }
+      .pagination,
+      .pagination-ai {
+        width: 28px;
+        height: 18px;
+        border-radius: 10px;
+        padding: 6px 0px;
+        margin: 5px;
+        color: var(--color);
+        background-color: var(--background);
+        border: solid 2px var(--border);
+        display: inline-block;
+        text-align: center;
+        font-size: 18px;
+        filter: drop-shadow(0px 0px 6px var(--border));
+        cursor: pointer;
+      }
+      .pagination:hover,
+      .pagination-ai:hover {
+        color: var(--subcolor);
+        background-color: var(--subbg);
+        border: solid 2px var(--subcolor);
+        filter: drop-shadow(0px 0px 6px var(--subcolor));
+      }
+      .pagination.active,
+      .pagination-ai.active {
+        color: var(--interact-color);
+        background-color: var(--border);
+        border: solid 2px var(--interact-color);
+        filter: drop-shadow(0px 0px 6px var(--interact-color));
+      }
+      #expandedImg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        max-height: 80%;
+        display: block;
+        border: none;
+        margin: auto;
+        border-radius: 0px !important;
+      }
+      @media screen and (min-width: 500px) {
+        img.sticker,
+        img.avatar {
+          width: calc(10% - 10px);
+        }
+        img.sticker:hover,
+        img.avatar:hover {
+          width: 10%;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        img.wallpaper {
+          max-width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -24,9 +121,115 @@
       <button id="btnlocatestickers">Open Stickers</button>
       <button id="btnlocateavatars">Open Avatars</button>
       <button id="btnlocatewallpapers">Open Wallpapers</button>
-      <iframe id="iStickers" src="index_stickers.html" frameborder="0" style="right:-100%;"></iframe>
-      <iframe id="iAvatars" src="index_avatars.html" frameborder="0" style="right:-100%;"></iframe>
-      <iframe id="iWallpapers" src="index_wallpapers.html" frameborder="0" style="right:-100%;"></iframe>
+      <div id="iStickers" style="right:-100%;">
+        <div class="content" id="GeneralSlist" style="display: flex;"></div>
+        <div class="content" id="OtherSlist"></div>
+        <div class="content" id="EmojiSlist"></div>
+        <div class="content" id="CyrusSlist"></div>
+        <div class="content" id="IoriSlist"></div>
+        <div class="content" id="IvanSlist"></div>
+        <div class="content" id="JakaSlist"></div>
+        <div class="content" id="JiuSlist"></div>
+        <div class="content" id="JoannaSlist"></div>
+        <div class="content" id="KikinaSlist"></div>
+        <div class="content" id="KizunaSlist"></div>
+        <div class="content" id="LillianSlist"></div>
+        <div class="content" id="MilaSlist"></div>
+        <div class="content" id="MobiusSlist"></div>
+        <div class="content" id="NighthalkSlist"></div>
+        <div class="content" id="NingSlist"></div>
+        <div class="content" id="NormaSlist"></div>
+        <div class="content" id="OpalSlist"></div>
+        <div class="content" id="PuritySlist"></div>
+        <div class="content" id="REDSlist"></div>
+        <div class="content" id="RikoSlist"></div>
+        <div class="content" id="RomSlist"></div>
+        <div class="content" id="SerenaSlist"></div>
+        <div class="content" id="ShinSlist"></div>
+        <div class="content" id="SilverSlist"></div>
+        <div class="content" id="VanessaSlist"></div>
+        <div class="content" id="VillarSlist"></div>
+        <div class="content" id="VitaSlist"></div>
+        <div class="content" id="YutongSlist"></div>
+        <div class="content" id="ZoeSlist"></div>
+        <div class="categories" id="categories">
+          <button class="categore active" id="GeneralCategore" onclick="openContent(event, 'GeneralSlist')">General</button>
+          <button class="categore" id="OtherCategore" onclick="openContent(event, 'OtherSlist')">Other</button>
+          <button class="categore" id="EmojiCategore" onclick="openContent(event, 'EmojiSlist')">Emoji</button>
+          <button class="categore" id="CyrusCategore" onclick="openContent(event, 'CyrusSlist')">Cyrus</button>
+          <button class="categore" id="IoriCategore" onclick="openContent(event, 'IoriSlist')">Iori</button>
+          <button class="categore" id="IvanCategore" onclick="openContent(event, 'IvanSlist')">Ivan</button>
+          <button class="categore" id="JakaCategore" onclick="openContent(event, 'JakaSlist')">Jaka</button>
+          <button class="categore" id="JiuCategore" onclick="openContent(event, 'JiuSlist')">Jiu Chong</button>
+          <button class="categore" id="JoannaCategore" onclick="openContent(event, 'JoannaSlist')">Joanna</button>
+          <button class="categore" id="KikinaCategore" onclick="openContent(event, 'KikinaSlist')">Kikina</button>
+          <button class="categore" id="KizunaCategore" onclick="openContent(event, 'KizunaSlist')">Kizuna AI</button>
+          <button class="categore" id="LillianCategore" onclick="openContent(event, 'LillianSlist')">Lillian</button>
+          <button class="categore" id="MilaCategore" onclick="openContent(event, 'MilaSlist')">Mila</button>
+          <button class="categore" id="MobiusCategore" onclick="openContent(event, 'MobiusSlist')">Mobius</button>
+          <button class="categore" id="NighthalkCategore" onclick="openContent(event, 'NighthalkSlist')">Nighthalk</button>
+          <button class="categore" id="NingCategore" onclick="openContent(event, 'NingSlist')">Ning</button>
+          <button class="categore" id="NormaCategore" onclick="openContent(event, 'NormaSlist')">Norma</button>
+          <button class="categore" id="OpalCategore" onclick="openContent(event, 'OpalSlist')">Opal</button>
+          <button class="categore" id="PurityCategore" onclick="openContent(event, 'PuritySlist')">Purity</button>
+          <button class="categore" id="REDCategore" onclick="openContent(event, 'REDSlist')">R.E.D</button>
+          <button class="categore" id="RikoCategore" onclick="openContent(event, 'RikoSlist')">Riko</button>
+          <button class="categore" id="RomCategore" onclick="openContent(event, 'RomSlist')">Rom</button>
+          <button class="categore" id="SerenaCategore" onclick="openContent(event, 'SerenaSlist')">Serena</button>
+          <button class="categore" id="ShinCategore" onclick="openContent(event, 'ShinSlist')">Shin</button>
+          <button class="categore" id="SilverCategore" onclick="openContent(event, 'SilverSlist')">Silver</button>
+          <button class="categore" id="VanesaCategore" onclick="openContent(event, 'VanessaSlist')">Vanessa</button>
+          <button class="categore" id="VillarCategore" onclick="openContent(event, 'VillarSlist')">Villar</button>
+          <button class="categore" id="VitaCategore" onclick="openContent(event, 'VitaSlist')">Vita</button>
+          <button class="categore" id="YutongCategore" onclick="openContent(event, 'YutongSlist')">Yutong</button>
+          <button class="categore" id="ZoeCategore" onclick="openContent(event, 'ZoeSlist')">Zoe</button>
+        </div>
+      </div>
+      <div id="iAvatars" style="right:-100%;">
+        <div class="content" id="OtherSlistAv" style="display: flex;"></div>
+        <div class="content" id="BoundSlist"></div>
+        <div class="content" id="AnimatedSlist"></div>
+        <div class="content" id="EventsPSlist"></div>
+        <div class="content" id="EventsMSlist"></div>
+        <div class="content" id="pDefSlist"></div>
+        <div class="content" id="mDefSlist"></div>
+        <div class="content" id="AISlist"></div>
+        <div class="categories" id="categories">
+          <button class="categore active" id="OtherCategoreAv" onclick="openContent(event, 'OtherSlistAv')">Other</button>
+          <button class="categore" id="BoundCategore" onclick="openContent(event, 'BoundSlist')">Bound</button>
+          <button class="categore" id="AnimatedCategore" onclick="openContent(event, 'AnimatedSlist')">Animated</button>
+          <button class="categore" id="EventsPCategore" onclick="openContent(event, 'EventsPSlist')">Pilot Events</button>
+          <button class="categore" id="EventsMCategore" onclick="openContent(event, 'EventsMSlist')">Mecha Events</button>
+          <button class="categore" id="pDefCategore" onclick="openContent(event, 'pDefSlist')">Pilot Default</button>
+          <button class="categore" id="mDefCategore" onclick="openContent(event, 'mDefSlist')">Mecha Default</button>
+          <button class="categore" id="aiCategore" onclick="openContent(event, 'AISlist')">AI</button>
+        </div>
+      </div>
+      <div id="iWallpapers" style="right:-100%;">
+        <div class="categories" id="categories">
+          <button class="categore active" id="imagesCategore" onclick="openContent(event, 'imagesSlistWallpapers');openPings(event, 'imgpagination');">Images</button>
+          <button class="categore" id="videoCategore" onclick="openContent(event, 'videoSlist');openPings(event, 'vidpagination');">Videos</button>
+          <button class="categore" id="aiCategore" onclick="openContent(event, 'AISlistWallpapers');openPings(event, 'aipagination');">AI</button>
+        </div>
+        <div class="content" id="imagesSlistWallpapers" style="display: flex;"></div>
+        <div id="imgpagination" class="paginationcontainer" style="display: flex;"></div>
+        <div class="content" id="videoSlist"></div>
+        <div id="vidpagination" class="paginationcontainer"></div>
+        <div class="content" id="AISlistWallpapers"></div>
+        <div id="aipagination" class="paginationcontainer"></div>
+      </div>
+      <div id="imagepreviewbase" class="image-display">
+        <span id="closePreview" onclick="closeImgPreview();">X</span>
+        <span id="copyButton">X</span>
+        <span id="downButton">X</span>
+        <img id="expandedImg">
+      </div>
+      <div id="imagepreviewbasegif" class="image-display">
+        <span id="closePreviewgif" onclick="closeImgPreviewGif();">X</span>
+        <span id="copyButtonGif">X</span>
+        <span id="downButtonGif">X</span>
+        <img id="expandedImgGif">
+      </div>
     </div>
     <footer class="footer" id="footer">
       <img src="index_data/Textures/netease.png" id="copyrightsNull" alt="Netease">
@@ -37,13 +240,70 @@
     <script src="index_data/Scripts/main/open_stickers.js"></script>
     <script src="index_data/Scripts/main/open_wallpapers.js"></script>
     <script src="index_data/Scripts/wndows_close.js"></script>
-    <script src="index_data/Scripts/errors.js"></script>
+    
+    <script src="index_data/scripts/windows/locator.js"></script>
+    <input type="button" id="vartime" style="display:none;" value="">
+    <script src="index_data/scripts/windows/preview_png.js"></script>
+    <script src="index_data/scripts/windows/preview_gif.js"></script>
+    <script src="index_data/scripts/windows/time.js"></script>
+    <script src="index_data/scripts/windows/download_png.js"></script>
+    <script src="index_data/scripts/windows/download_gif.js"></script>
+    <script src="index_data/scripts/windows/copy_png.js"></script>
+    <script src="index_data/scripts/windows/copy_gif.js"></script>
+    <script src="index_data/scripts/windows/tabs.js"></script>
+    
+    <script src="index_data/Scripts/avatars/avatar_other_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_bound_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_animated_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_pilot_default_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_mecha_default_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_pilot_events_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_mecha_events_loader.js"></script>
+    <script src="index_data/Scripts/avatars/avatar_ai_loader.js"></script>
+
+    <script src="index_data/Scripts/stickers/sticker_general_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_other_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_emoji_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_cyrus_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_iori_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_ivan_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_jaka_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_jiu_chong_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_joanna_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_kikina_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_kizuna_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_lillian_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_mila_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_mobius_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_nighthalk_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_ning_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_norma_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_opal_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_purity_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_red_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_riko_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_rom_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_serena_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_shin_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_silver_deacon_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_vanessa_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_villar_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_vita_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_yutong_loader.js"></script>
+    <script src="index_data/Scripts/stickers/sticker_zoe_loader.js"></script>
+
+    <script src="index_data/Scripts/wallpapers/pagination_tabs.js"></script>
+    <script src="index_data/Scripts/wallpapers/wallpapers_images_loader.js"></script>
+    <!--script src="index_data/Scripts_wallpapers/wallpapers_videos_loader.js"></script-->
+    <script src="index_data/Scripts/wallpapers/wallpapers_ai_loader.js"></script>
 
     <script src="index_data/Scripts/windows/time.js"></script>
+    <script src="index_data/Scripts/errors.js"></script>
+    <script src="index_data/Scripts/loads.js"></script>
     <script>
       window.onerror = function() {
         unknownError();
-      }
+      };
     </script>
     <script>
       if(navigator.serviceWorker) {

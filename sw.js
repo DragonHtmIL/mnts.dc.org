@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.dc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.0.4-10012026";
+var VERSION = "0.0.5-31012026";
 var URLS = [
   `${GHPATH}/index_data/Resources/Avatars/AI/00000.png`,
   `${GHPATH}/index_data/Resources/Avatars/AI/00001.png`,
@@ -983,6 +983,7 @@ var URLS = [
   `${GHPATH}/index_data/Scripts/avatars/avatar_pilot_events_loader.js`,
   `${GHPATH}/index_data/Scripts/avatars`,
   `${GHPATH}/index_data/Scripts/errors.js`,
+  `${GHPATH}/index_data/Scripts/loads.js`,
   `${GHPATH}/index_data/Scripts/main/open_avatars.js`,
   `${GHPATH}/index_data/Scripts/main/open_stickers.js`,
   `${GHPATH}/index_data/Scripts/main/open_wallpapers.js`,
@@ -1050,11 +1051,8 @@ var URLS = [
   `${GHPATH}/index_data/Textures/logo.png`,
   `${GHPATH}/index_data/Textures/netease.png`,
   `${GHPATH}/index_data/Textures`,
-  `${GHPATH}/index_data/pages/index_avatars.html`,
-  `${GHPATH}/index_data/pages/index_stickers.html`,
-  `${GHPATH}/index_data/pages/index_wallpapers.html`,
-  `${GHPATH}/index_data/pages`,
-  `${GHPATH}/index_data`
+  `${GHPATH}/index_data`,
+  `${GHPATH}/index.html`
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(URLS)));
