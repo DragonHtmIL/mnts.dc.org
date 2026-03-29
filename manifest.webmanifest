@@ -16,14 +16,5 @@
       "sizes": "64x64",
       "purpose": "any maskable"
     }
-  ],
-  "locales": ["en","ru","he"],
-  "ru": {
-    "name": "Библиотека SMC",
-    "short_name": "Библиотека SMC"
-  },
-  "he": {
-    "name": "סיפריית SMC",
-    "short_name": "סיפריית SMC"
-  }
+  ]
 }

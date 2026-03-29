@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="none">
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -90,6 +90,32 @@
         margin: auto;
         border-radius: 0px !important;
       }
+      .paginations-cotroller {
+        display: none;
+      }
+      #paginationNumber {
+        color: var(--color);
+        width: 100%;
+        border-top: solid 2px var(--border);
+        text-align: center;
+      }
+      .paginationsPrevNext {
+        display: flex;
+        width: 100%;
+      }
+      .paginationsPrevNext button {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        height: 50px;
+      }
+      .paginationsPrevNext button:disabled {
+        border: solid 2px var(--import-error);
+        color: var(--import-error);
+        background-color: var(--subbg);
+        text-shadow: none;
+        box-shadow: none;
+      }
       @media screen and (min-width: 500px) {
         img.sticker,
         img.avatar {
@@ -103,6 +129,12 @@
       @media screen and (max-width: 500px) {
         img.wallpaper {
           max-width: 100%;
+        }
+        .paginationcontainer {
+          display: none !important;
+        }
+        .paginations-cotroller {
+          display: block;
         }
       }
     </style>
@@ -122,101 +154,110 @@
       <button id="btnlocateavatars">Open Avatars</button>
       <button id="btnlocatewallpapers">Open Wallpapers</button>
       <div id="iStickers" style="right:-100%;">
-        <div class="content" id="GeneralSlist" style="display: flex;"></div>
-        <div class="content" id="OtherSlist"></div>
-        <div class="content" id="EmojiSlist"></div>
-        <div class="content" id="CyrusSlist"></div>
-        <div class="content" id="IoriSlist"></div>
-        <div class="content" id="IvanSlist"></div>
-        <div class="content" id="JakaSlist"></div>
-        <div class="content" id="JiuSlist"></div>
-        <div class="content" id="JoannaSlist"></div>
-        <div class="content" id="KikinaSlist"></div>
-        <div class="content" id="KizunaSlist"></div>
-        <div class="content" id="LillianSlist"></div>
-        <div class="content" id="MilaSlist"></div>
-        <div class="content" id="MobiusSlist"></div>
-        <div class="content" id="NighthalkSlist"></div>
-        <div class="content" id="NingSlist"></div>
-        <div class="content" id="NormaSlist"></div>
-        <div class="content" id="OpalSlist"></div>
-        <div class="content" id="PuritySlist"></div>
-        <div class="content" id="REDSlist"></div>
-        <div class="content" id="RikoSlist"></div>
-        <div class="content" id="RomSlist"></div>
-        <div class="content" id="SerenaSlist"></div>
-        <div class="content" id="ShinSlist"></div>
-        <div class="content" id="SilverSlist"></div>
-        <div class="content" id="VanessaSlist"></div>
-        <div class="content" id="VillarSlist"></div>
-        <div class="content" id="VitaSlist"></div>
-        <div class="content" id="YutongSlist"></div>
-        <div class="content" id="ZoeSlist"></div>
+        <div class="content cst" id="GeneralSlist" style="display: flex;"></div>
+        <div class="content cst" id="OtherSlist"></div>
+        <div class="content cst" id="EmojiSlist"></div>
+        <div class="content cst" id="CyrusSlist"></div>
+        <div class="content cst" id="IoriSlist"></div>
+        <div class="content cst" id="IvanSlist"></div>
+        <div class="content cst" id="JakaSlist"></div>
+        <div class="content cst" id="JiuSlist"></div>
+        <div class="content cst" id="JoannaSlist"></div>
+        <div class="content cst" id="KikinaSlist"></div>
+        <div class="content cst" id="KizunaSlist"></div>
+        <div class="content cst" id="LillianSlist"></div>
+        <div class="content cst" id="MilaSlist"></div>
+        <div class="content cst" id="MobiusSlist"></div>
+        <div class="content cst" id="NighthalkSlist"></div>
+        <div class="content cst" id="NingSlist"></div>
+        <div class="content cst" id="NormaSlist"></div>
+        <div class="content cst" id="OpalSlist"></div>
+        <div class="content cst" id="PuritySlist"></div>
+        <div class="content cst" id="REDSlist"></div>
+        <div class="content cst" id="RikoSlist"></div>
+        <div class="content cst" id="RomSlist"></div>
+        <div class="content cst" id="SerenaSlist"></div>
+        <div class="content cst" id="ShinSlist"></div>
+        <div class="content cst" id="SilverSlist"></div>
+        <div class="content cst" id="VanessaSlist"></div>
+        <div class="content cst" id="VillarSlist"></div>
+        <div class="content cst" id="VitaSlist"></div>
+        <div class="content cst" id="YutongSlist"></div>
+        <div class="content cst" id="ZoeSlist"></div>
         <div class="categories" id="categories">
-          <button class="categore active" id="GeneralCategore" onclick="openContent(event, 'GeneralSlist')">General</button>
-          <button class="categore" id="OtherCategore" onclick="openContent(event, 'OtherSlist')">Other</button>
-          <button class="categore" id="EmojiCategore" onclick="openContent(event, 'EmojiSlist')">Emoji</button>
-          <button class="categore" id="CyrusCategore" onclick="openContent(event, 'CyrusSlist')">Cyrus</button>
-          <button class="categore" id="IoriCategore" onclick="openContent(event, 'IoriSlist')">Iori</button>
-          <button class="categore" id="IvanCategore" onclick="openContent(event, 'IvanSlist')">Ivan</button>
-          <button class="categore" id="JakaCategore" onclick="openContent(event, 'JakaSlist')">Jaka</button>
-          <button class="categore" id="JiuCategore" onclick="openContent(event, 'JiuSlist')">Jiu Chong</button>
-          <button class="categore" id="JoannaCategore" onclick="openContent(event, 'JoannaSlist')">Joanna</button>
-          <button class="categore" id="KikinaCategore" onclick="openContent(event, 'KikinaSlist')">Kikina</button>
-          <button class="categore" id="KizunaCategore" onclick="openContent(event, 'KizunaSlist')">Kizuna AI</button>
-          <button class="categore" id="LillianCategore" onclick="openContent(event, 'LillianSlist')">Lillian</button>
-          <button class="categore" id="MilaCategore" onclick="openContent(event, 'MilaSlist')">Mila</button>
-          <button class="categore" id="MobiusCategore" onclick="openContent(event, 'MobiusSlist')">Mobius</button>
-          <button class="categore" id="NighthalkCategore" onclick="openContent(event, 'NighthalkSlist')">Nighthalk</button>
-          <button class="categore" id="NingCategore" onclick="openContent(event, 'NingSlist')">Ning</button>
-          <button class="categore" id="NormaCategore" onclick="openContent(event, 'NormaSlist')">Norma</button>
-          <button class="categore" id="OpalCategore" onclick="openContent(event, 'OpalSlist')">Opal</button>
-          <button class="categore" id="PurityCategore" onclick="openContent(event, 'PuritySlist')">Purity</button>
-          <button class="categore" id="REDCategore" onclick="openContent(event, 'REDSlist')">R.E.D</button>
-          <button class="categore" id="RikoCategore" onclick="openContent(event, 'RikoSlist')">Riko</button>
-          <button class="categore" id="RomCategore" onclick="openContent(event, 'RomSlist')">Rom</button>
-          <button class="categore" id="SerenaCategore" onclick="openContent(event, 'SerenaSlist')">Serena</button>
-          <button class="categore" id="ShinCategore" onclick="openContent(event, 'ShinSlist')">Shin</button>
-          <button class="categore" id="SilverCategore" onclick="openContent(event, 'SilverSlist')">Silver</button>
-          <button class="categore" id="VanesaCategore" onclick="openContent(event, 'VanessaSlist')">Vanessa</button>
-          <button class="categore" id="VillarCategore" onclick="openContent(event, 'VillarSlist')">Villar</button>
-          <button class="categore" id="VitaCategore" onclick="openContent(event, 'VitaSlist')">Vita</button>
-          <button class="categore" id="YutongCategore" onclick="openContent(event, 'YutongSlist')">Yutong</button>
-          <button class="categore" id="ZoeCategore" onclick="openContent(event, 'ZoeSlist')">Zoe</button>
+          <button class="categorest active" id="GeneralCategore" onclick="openContentSt(event, 'GeneralSlist')">General</button>
+          <button class="categorest" id="OtherCategore" onclick="openContentSt(event, 'OtherSlist')">Other</button>
+          <button class="categorest" id="EmojiCategore" onclick="openContentSt(event, 'EmojiSlist')">Emoji</button>
+          <button class="categorest" id="CyrusCategore" onclick="openContentSt(event, 'CyrusSlist')">Cyrus</button>
+          <button class="categorest" id="IoriCategore" onclick="openContentSt(event, 'IoriSlist')">Iori</button>
+          <button class="categorest" id="IvanCategore" onclick="openContentSt(event, 'IvanSlist')">Ivan</button>
+          <button class="categorest" id="JakaCategore" onclick="openContentSt(event, 'JakaSlist')">Jaka</button>
+          <button class="categorest" id="JiuCategore" onclick="openContentSt(event, 'JiuSlist')">Jiu Chong</button>
+          <button class="categorest" id="JoannaCategore" onclick="openContentSt(event, 'JoannaSlist')">Joanna</button>
+          <button class="categorest" id="KikinaCategore" onclick="openContentSt(event, 'KikinaSlist')">Kikina</button>
+          <button class="categorest" id="KizunaCategore" onclick="openContentSt(event, 'KizunaSlist')">Kizuna AI</button>
+          <button class="categorest" id="LillianCategore" onclick="openContentSt(event, 'LillianSlist')">Lillian</button>
+          <button class="categorest" id="MilaCategore" onclick="openContentSt(event, 'MilaSlist')">Mila</button>
+          <button class="categorest" id="MobiusCategore" onclick="openContentSt(event, 'MobiusSlist')">Mobius</button>
+          <button class="categorest" id="NighthalkCategore" onclick="openContentSt(event, 'NighthalkSlist')">Nighthalk</button>
+          <button class="categorest" id="NingCategore" onclick="openContentSt(event, 'NingSlist')">Ning</button>
+          <button class="categorest" id="NormaCategore" onclick="openContentSt(event, 'NormaSlist')">Norma</button>
+          <button class="categorest" id="OpalCategore" onclick="openContentSt(event, 'OpalSlist')">Opal</button>
+          <button class="categorest" id="PurityCategore" onclick="openContentSt(event, 'PuritySlist')">Purity</button>
+          <button class="categorest" id="REDCategore" onclick="openContentSt(event, 'REDSlist')">R.E.D</button>
+          <button class="categorest" id="RikoCategore" onclick="openContentSt(event, 'RikoSlist')">Riko</button>
+          <button class="categorest" id="RomCategore" onclick="openContentSt(event, 'RomSlist')">Rom</button>
+          <button class="categorest" id="SerenaCategore" onclick="openContentSt(event, 'SerenaSlist')">Serena</button>
+          <button class="categorest" id="ShinCategore" onclick="openContentSt(event, 'ShinSlist')">Shin</button>
+          <button class="categorest" id="SilverCategore" onclick="openContentSt(event, 'SilverSlist')">Silver</button>
+          <button class="categorest" id="VanesaCategore" onclick="openContentSt(event, 'VanessaSlist')">Vanessa</button>
+          <button class="categorest" id="VillarCategore" onclick="openContentSt(event, 'VillarSlist')">Villar</button>
+          <button class="categorest" id="VitaCategore" onclick="openContentSt(event, 'VitaSlist')">Vita</button>
+          <button class="categorest" id="YutongCategore" onclick="openContentSt(event, 'YutongSlist')">Yutong</button>
+          <button class="categorest" id="ZoeCategore" onclick="openContentSt(event, 'ZoeSlist')">Zoe</button>
         </div>
       </div>
       <div id="iAvatars" style="right:-100%;">
-        <div class="content" id="OtherSlistAv" style="display: flex;"></div>
-        <div class="content" id="BoundSlist"></div>
-        <div class="content" id="AnimatedSlist"></div>
-        <div class="content" id="EventsPSlist"></div>
-        <div class="content" id="EventsMSlist"></div>
-        <div class="content" id="pDefSlist"></div>
-        <div class="content" id="mDefSlist"></div>
-        <div class="content" id="AISlist"></div>
+        <div class="content cav" id="OtherSlistAv" style="display: flex;"></div>
+        <div class="content cav" id="BoundSlist"></div>
+        <div class="content cav" id="AnimatedSlist"></div>
+        <div class="content cav" id="EventsPSlist"></div>
+        <div class="content cav" id="EventsMSlist"></div>
+        <div class="content cav" id="pDefSlist"></div>
+        <div class="content cav" id="mDefSlist"></div>
+        <div class="content cav" id="AISlist"></div>
         <div class="categories" id="categories">
-          <button class="categore active" id="OtherCategoreAv" onclick="openContent(event, 'OtherSlistAv')">Other</button>
-          <button class="categore" id="BoundCategore" onclick="openContent(event, 'BoundSlist')">Bound</button>
-          <button class="categore" id="AnimatedCategore" onclick="openContent(event, 'AnimatedSlist')">Animated</button>
-          <button class="categore" id="EventsPCategore" onclick="openContent(event, 'EventsPSlist')">Pilot Events</button>
-          <button class="categore" id="EventsMCategore" onclick="openContent(event, 'EventsMSlist')">Mecha Events</button>
-          <button class="categore" id="pDefCategore" onclick="openContent(event, 'pDefSlist')">Pilot Default</button>
-          <button class="categore" id="mDefCategore" onclick="openContent(event, 'mDefSlist')">Mecha Default</button>
-          <button class="categore" id="aiCategore" onclick="openContent(event, 'AISlist')">AI</button>
+          <button class="categoreav active" id="OtherCategoreAv" onclick="openContentAv(event, 'OtherSlistAv')">Other</button>
+          <button class="categoreav" id="BoundCategore" onclick="openContentAv(event, 'BoundSlist')">Bound</button>
+          <button class="categoreav" id="AnimatedCategore" onclick="openContentAv(event, 'AnimatedSlist')">Animated</button>
+          <button class="categoreav" id="EventsPCategore" onclick="openContentAv(event, 'EventsPSlist')">Pilot Events</button>
+          <button class="categoreav" id="EventsMCategore" onclick="openContentAv(event, 'EventsMSlist')">Mecha Events</button>
+          <button class="categoreav" id="pDefCategore" onclick="openContentAv(event, 'pDefSlist')">Pilot Default</button>
+          <button class="categoreav" id="mDefCategore" onclick="openContentAv(event, 'mDefSlist')">Mecha Default</button>
+          <button class="categoreav" id="aiCategore" onclick="openContentAv(event, 'AISlist')">AI</button>
         </div>
       </div>
       <div id="iWallpapers" style="right:-100%;">
-        <div class="categories" id="categories">
-          <button class="categore active" id="imagesCategore" onclick="openContent(event, 'imagesSlistWallpapers');openPings(event, 'imgpagination');">Images</button>
-          <button class="categore" id="videoCategore" onclick="openContent(event, 'videoSlist');openPings(event, 'vidpagination');">Videos</button>
-          <button class="categore" id="aiCategore" onclick="openContent(event, 'AISlistWallpapers');openPings(event, 'aipagination');">AI</button>
+        <div class="wall-button-style">
+          <div class="categories" id="categoriesWallpapers">
+            <button class="categorewp active" id="imagesCategore" onclick="openContentWp(event, 'imagesSlistWallpapers');openPings(event, 'imgpagination');">Images</button>
+            <button class="categorewp" id="videoCategore" onclick="openContentWp(event, 'videoSlist');openPings(event, 'vidpagination');">Videos</button>
+            <button class="categorewp" id="aiCategore" onclick="openContentWp(event, 'AISlistWallpapers');openPings(event, 'aipagination');">AI</button>
+          </div>
+          <div id="imgpagination" class="paginationcontainer" style="display: flex;"></div>
+          <div id="vidpagination" class="paginationcontainer"></div>
+          <div id="aipagination" class="paginationcontainer"></div>
+          <div class="paginations-cotroller" id="paginationsComtroll">
+            <div id="paginationNumber">...</div>
+            <div class="paginationsPrevNext">
+              <button id="prevBtn" onclick="prevPagination();">⟨⟨⟨</button>
+              <button id="nextBtn" onclick="nextPagination();">⟩⟩⟩</button>
+            </div>
+          </div>
         </div>
-        <div class="content" id="imagesSlistWallpapers" style="display: flex;"></div>
-        <div id="imgpagination" class="paginationcontainer" style="display: flex;"></div>
-        <div class="content" id="videoSlist"></div>
-        <div id="vidpagination" class="paginationcontainer"></div>
-        <div class="content" id="AISlistWallpapers"></div>
-        <div id="aipagination" class="paginationcontainer"></div>
+        <div class="content cwp" id="imagesSlistWallpapers" style="display: flex;"></div>
+        <div class="content cwp" id="videoSlist"></div>
+        <div class="content cwp" id="AISlistWallpapers"></div>
       </div>
       <div id="imagepreviewbase" class="image-display">
         <span id="closePreview" onclick="closeImgPreview();">X</span>
@@ -293,6 +334,7 @@
     <script src="index_data/Scripts/stickers/sticker_zoe_loader.js"></script>
 
     <script src="index_data/Scripts/wallpapers/pagination_tabs.js"></script>
+    <script src="index_data/Scripts/wallpapers/paginations_controller.js"></script>
     <script src="index_data/Scripts/wallpapers/wallpapers_images_loader.js"></script>
     <!--script src="index_data/Scripts_wallpapers/wallpapers_videos_loader.js"></script-->
     <script src="index_data/Scripts/wallpapers/wallpapers_ai_loader.js"></script>
