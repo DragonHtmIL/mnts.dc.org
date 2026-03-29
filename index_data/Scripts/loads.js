@@ -36,6 +36,7 @@ window.addEventListener('load', function() {
   loadVita();
   loadYutong();
   loadZoe();
+  updateUI();
   document.getElementById("num1").click();
   document.getElementById("numAI1").click();
 });

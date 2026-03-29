@@ -110,7 +110,7 @@ button:hover {
   display: flex;
   background-color: var(--background);
   z-index: 1;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
 }
 footer,
