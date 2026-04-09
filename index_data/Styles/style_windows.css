@@ -73,6 +73,15 @@
   height: 100%;
   z-index: 1;
 }
+.preview-btns {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+}
 #closePreview,
 #copyButton,
 #downButton,
@@ -82,36 +91,64 @@
 #closePreviewvid,
 #copyButtonVid,
 #downButtonVid {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative;
   width: 20px;
-  height: auto;
+  height: 20px;
   padding: 10px 10px;
   text-align: center;
   border-radius: 10px;
   border: solid 2px var(--border);
   background-color: var(--background);
-  background-size: 50% 50%;
-  background-position: center center;
+  background-size: auto 50%;
+  background-position: 11px 10px;
   background-repeat: no-repeat;
-  color: transparent;
-  background-image: var(--close);
   filter: drop-shadow(0px 0px 6px var(--border)) grayscale(1);
   cursor: pointer;
   z-index: 1;
+}
+#closePreview,
+#closePreviewgif,
+#closePreviewvid {
+  background-image: var(--close);
+  margin: 0px 10px;
+  overflow: hidden;
+}
+#closePreview::after,
+#closePreviewgif::after,
+#closePreviewvid::after {
+  content: 'Close';
+  white-space: nowrap;
+  color: transparent;
+  padding-left: 32px;
 }
 #copyButton,
 #copyButtonGif,
 #copyButtonVid {
   background-image: var(--copy);
-  right: 63px;
+  margin: 0px 10px;
+  overflow: hidden;
+}
+#copyButton::after,
+#copyButtonGif::after,
+#copyButtonVid::after {
+  content: 'Copy';
+  white-space: nowrap;
+  color: transparent;
+  padding-left: 32px;
 }
 #downButton,
 #downButtonGif,
 #downButtonVid {
   background-image: var(--down);
-  right: 117px;
+  overflow: hidden;
+}
+#downButton::after,
+#downButtonGif::after,
+#downButtonVid::after {
+  content: 'Download';
+  white-space: nowrap;
+  color: transparent;
+  padding-left: 32px;
 }
 #closePreview:hover,
 #closePreviewgif:hover,
@@ -124,6 +161,32 @@
 #downButtonVid:hover {
   filter: drop-shadow(0px 0px 6px var(--subcolor)) grayscale(0);
   border: solid 2px var(--subcolor);
+}
+#closePreview:hover,
+#closePreviewgif:hover,
+#closePreviewvid:hover {
+  width: 90px;
+}
+#copyButton:hover,
+#copyButtonGif:hover,
+#copyButtonVid:hover {
+  width: 75px;
+}
+#downButton:hover,
+#downButtonGif:hover,
+#downButtonVid:hover {
+  width: 115px;
+}
+#closePreview:hover::after,
+#closePreviewgif:hover::after,
+#closePreviewvid:hover::after,
+#copyButton:hover::after,
+#copyButtonGif:hover::after,
+#copyButtonVid:hover::after,
+#downButton:hover::after,
+#downButtonGif:hover::after,
+#downButtonVid:hover::after {
+  color: var(--subcolor);
 }
 #expandedImg,
 #expandedImgGif,
