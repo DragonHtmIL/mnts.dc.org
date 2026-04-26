@@ -1,4 +1,5 @@
 window.addEventListener('load', function() {
+  iconAllLoad();
   loadOtherAv();
   loadBound();
   loadAnimated();
