@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.dc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.1.4-26042026";
+var VERSION = "0.1.5-26042026";
 var URLS = [
   `${GHPATH}/index_data/Scripts/avatars/avatar_ai_loader.js`,
   `${GHPATH}/index_data/Scripts/avatars/avatar_animated_loader.js`,
@@ -13,6 +13,7 @@ var URLS = [
   `${GHPATH}/index_data/Scripts/avatars`,
   `${GHPATH}/index_data/Scripts/errors.js`,
   `${GHPATH}/index_data/Scripts/loads.js`,
+  `${GHPATH}/index_data/Scripts/page_icon_loader.js`,
   `${GHPATH}/index_data/Scripts/variables.js`,
   `${GHPATH}/index_data/Scripts/wndows_close.js`,
   `${GHPATH}/index_data/Scripts/year.js`,
