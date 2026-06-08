@@ -10,10 +10,10 @@
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  padding: 1%;
 }
 .categories#categoriesWallpapers {
-  height: auto;
-  width: 100%;
+  height: 50%;
 }
 .categories button {
   transform: scale(1);
@@ -42,10 +42,14 @@
   border: solid 2px var(--interact-color) !important;
 }
 .wall-button-style {
-  width: 25%;
+  width: 30%;
   display: flex;
+  height: 50%;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .content {
   width: 70%;
@@ -92,9 +96,11 @@
 #copyButtonVid,
 #downButtonVid {
   position: relative;
-  width: 20px;
+  width: auto;
+  max-width: 20px;
   height: 20px;
   padding: 10px 10px;
+  margin: 0 10px;
   text-align: center;
   border-radius: 10px;
   border: solid 2px var(--border);
@@ -104,14 +110,13 @@
   background-repeat: no-repeat;
   filter: drop-shadow(0px 0px 6px var(--border)) grayscale(1);
   cursor: pointer;
+  overflow: hidden;
   z-index: 1;
 }
 #closePreview,
 #closePreviewgif,
 #closePreviewvid {
   background-image: var(--close);
-  margin: 0px 10px;
-  overflow: hidden;
 }
 #closePreview::after,
 #closePreviewgif::after,
@@ -125,8 +130,6 @@
 #copyButtonGif,
 #copyButtonVid {
   background-image: var(--copy);
-  margin: 0px 10px;
-  overflow: hidden;
 }
 #copyButton::after,
 #copyButtonGif::after,
@@ -140,7 +143,6 @@
 #downButtonGif,
 #downButtonVid {
   background-image: var(--down);
-  overflow: hidden;
 }
 #downButton::after,
 #downButtonGif::after,
@@ -165,17 +167,17 @@
 #closePreview:hover,
 #closePreviewgif:hover,
 #closePreviewvid:hover {
-  width: 90px;
+  max-width: 77.912px;
 }
 #copyButton:hover,
 #copyButtonGif:hover,
 #copyButtonVid:hover {
-  width: 75px;
+  max-width: 73.362px;
 }
 #downButton:hover,
 #downButtonGif:hover,
 #downButtonVid:hover {
-  width: 115px;
+  max-width: 111.162px;
 }
 #closePreview:hover::after,
 #closePreviewgif:hover::after,
@@ -215,11 +217,142 @@
   display: flex;
   overflow: auto;
 }
+.mobile .wall-button-style {
+  height: auto;
+}
+.mobile .categories#categoriesWallpapers {
+  height: 87%;
+}
+img.avatar {
+  width: calc(20% - 10px);
+  margin: 5px;
+}
+img.sticker {
+  width: calc(20% - 10px);
+  margin: 5px;
+}
+img.wallpaper {
+  max-width: 60%;
+  height: auto;
+  margin: 2px auto;
+}
+img.avatar:hover {
+  width: 20%;
+  margin: 0px;
+  filter: drop-shadow(0px 0px 6px var(--background));
+}
+img.sticker:hover {
+  width: 20%;
+  margin: 0px;
+  filter: drop-shadow(0px 0px 6px var(--background));
+}
+img.wallpaper:hover {
+  filter: drop-shadow(0px 0px 6px var(--background));
+}
+#imgpagination,
+#vidpagination,
+#aipagination {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+.pagination,
+.pagination-ai {
+  width: 28px;
+  height: 18px;
+  border-radius: 10px;
+  padding: 6px 0px;
+  margin: 5px;
+  color: var(--color);
+  background-color: var(--background);
+  border: solid 2px var(--border);
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  filter: drop-shadow(0px 0px 6px var(--border));
+  cursor: pointer;
+}
+.pagination:hover,
+.pagination-ai:hover {
+  color: var(--subcolor);
+  background-color: var(--subbg);
+  border: solid 2px var(--subcolor);
+  filter: drop-shadow(0px 0px 6px var(--subcolor));
+}
+.pagination.active,
+.pagination-ai.active {
+  color: var(--interact-color);
+  background-color: var(--border);
+  border: solid 2px var(--interact-color);
+  filter: drop-shadow(0px 0px 6px var(--interact-color));
+}
+#expandedImg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  max-height: 80%;
+  display: block;
+  border: none;
+  margin: auto;
+  border-radius: 0px !important;
+}
+.paginations-cotroller {
+  display: none;
+}
+#paginationNumber {
+  color: var(--color);
+  width: 100%;
+  border-top: solid 2px var(--border);
+  border-left: solid 2px var(--border);
+  text-align: center;
+}
+.paginationsPrevNext {
+  display: flex;
+  width: 100%;
+}
+.paginationsPrevNext button {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  height: 50px;
+}
+.paginationsPrevNext button:disabled {
+  border: solid 2px var(--import-error);
+  color: var(--import-error);
+  background-color: var(--subbg);
+  text-shadow: none;
+  box-shadow: none;
+}
+@media screen and (min-width: 500px) {
+  img.sticker,
+  img.avatar {
+    width: calc(10% - 10px);
+  }
+  img.sticker:hover,
+  img.avatar:hover {
+    width: 10%;
+  }
+}
 @media screen and (max-width: 500px) {
   #iAvatars .categories button,
   #iStickers .categories button {
     padding: 0px 0px;
     width: 100%;
     height: 40px;
+  }
+  img.wallpaper {
+    max-width: 100%;
+  }
+  .paginationcontainer {
+    display: none !important;
+  }
+  .paginations-cotroller {
+    display: block;
   }
 }
