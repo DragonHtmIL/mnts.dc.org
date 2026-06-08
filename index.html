@@ -10,134 +10,6 @@
     <link rel="stylesheet" href="index_data/Styles/style.css" type="text/css">
     <link rel="stylesheet" href="index_data/Styles/style_main.css" type="text/css">
     <link rel="stylesheet" href="index_data/Styles/style_windows.css" type="text/css">
-    <style>
-      img.avatar {
-        width: calc(20% - 10px);
-        margin: 5px;
-      }
-      img.sticker {
-        width: calc(20% - 10px);
-        margin: 5px;
-      }
-      img.wallpaper {
-        max-width: 60%;
-        height: auto;
-        margin: 2px auto;
-      }
-      img.avatar:hover {
-        width: 20%;
-        margin: 0px;
-        filter: drop-shadow(0px 0px 6px var(--background));
-      }
-      img.sticker:hover {
-        width: 20%;
-        margin: 0px;
-        filter: drop-shadow(0px 0px 6px var(--background));
-      }
-      img.wallpaper:hover {
-        filter: drop-shadow(0px 0px 6px var(--background));
-      }
-      #imgpagination,
-      #vidpagination,
-      #aipagination {
-        position: relative;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        display: none;
-      }
-      .pagination,
-      .pagination-ai {
-        width: 28px;
-        height: 18px;
-        border-radius: 10px;
-        padding: 6px 0px;
-        margin: 5px;
-        color: var(--color);
-        background-color: var(--background);
-        border: solid 2px var(--border);
-        display: inline-block;
-        text-align: center;
-        font-size: 18px;
-        filter: drop-shadow(0px 0px 6px var(--border));
-        cursor: pointer;
-      }
-      .pagination:hover,
-      .pagination-ai:hover {
-        color: var(--subcolor);
-        background-color: var(--subbg);
-        border: solid 2px var(--subcolor);
-        filter: drop-shadow(0px 0px 6px var(--subcolor));
-      }
-      .pagination.active,
-      .pagination-ai.active {
-        color: var(--interact-color);
-        background-color: var(--border);
-        border: solid 2px var(--interact-color);
-        filter: drop-shadow(0px 0px 6px var(--interact-color));
-      }
-      #expandedImg {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        max-width: 100%;
-        max-height: 80%;
-        display: block;
-        border: none;
-        margin: auto;
-        border-radius: 0px !important;
-      }
-      .paginations-cotroller {
-        display: none;
-      }
-      #paginationNumber {
-        color: var(--color);
-        width: 100%;
-        border-top: solid 2px var(--border);
-        text-align: center;
-      }
-      .paginationsPrevNext {
-        display: flex;
-        width: 100%;
-      }
-      .paginationsPrevNext button {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-        height: 50px;
-      }
-      .paginationsPrevNext button:disabled {
-        border: solid 2px var(--import-error);
-        color: var(--import-error);
-        background-color: var(--subbg);
-        text-shadow: none;
-        box-shadow: none;
-      }
-      @media screen and (min-width: 500px) {
-        img.sticker,
-        img.avatar {
-          width: calc(10% - 10px);
-        }
-        img.sticker:hover,
-        img.avatar:hover {
-          width: 10%;
-        }
-      }
-      @media screen and (max-width: 500px) {
-        img.wallpaper {
-          max-width: 100%;
-        }
-        .paginationcontainer {
-          display: none !important;
-        }
-        .paginations-cotroller {
-          display: block;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -241,12 +113,12 @@
         <div class="content cwp" id="imagesSlistWallpapers" style="display: flex;"></div>
         <div class="content cwp" id="videoSlist"></div>
         <div class="content cwp" id="AISlistWallpapers"></div>
+        <div class="categories" id="categoriesWallpapers">
+          <button class="categorewp active" id="imagesCategore" onclick="openContentWp(event, 'imagesSlistWallpapers');openPings(event, 'imgpagination');">Images</button>
+          <button class="categorewp" id="videoCategore" onclick="openContentWp(event, 'videoSlist');openPings(event, 'vidpagination');">Videos</button>
+          <button class="categorewp" id="aiCategore" onclick="openContentWp(event, 'AISlistWallpapers');openPings(event, 'aipagination');">AI</button>
+        </div>
         <div class="wall-button-style">
-          <div class="categories" id="categoriesWallpapers">
-            <button class="categorewp active" id="imagesCategore" onclick="openContentWp(event, 'imagesSlistWallpapers');openPings(event, 'imgpagination');">Images</button>
-            <button class="categorewp" id="videoCategore" onclick="openContentWp(event, 'videoSlist');openPings(event, 'vidpagination');">Videos</button>
-            <button class="categorewp" id="aiCategore" onclick="openContentWp(event, 'AISlistWallpapers');openPings(event, 'aipagination');">AI</button>
-          </div>
           <div id="imgpagination" class="paginationcontainer" style="display: flex;"></div>
           <div id="vidpagination" class="paginationcontainer"></div>
           <div id="aipagination" class="paginationcontainer"></div>
@@ -284,7 +156,8 @@
     <script src="index_data/Scripts/main/open_avatars.js"></script>
     <script src="index_data/Scripts/main/open_stickers.js"></script>
     <script src="index_data/Scripts/main/open_wallpapers.js"></script>
-    <script src="index_data/Scripts/wndows_close.js"></script>
+    <script src="index_data/Scripts/main/wndows_close.js"></script>
+    <script src="index_data/Scripts/main/mobile.js"></script>
     
     <script src="index_data/Scripts/windows/locator.js"></script>
     <input type="button" id="vartime" style="display:none;" value="">
