@@ -1,9 +1,9 @@
 document.getElementById("btnlocatewallpapers").onclick = function() {
-  var btnClose = document.getElementById("btnclosewindows");
-  document.getElementById("iWallpapers").style.right = "0%";
-  document.getElementById("plustitle").style.opacity = "0";
-  document.getElementById("plustitleWallpapers").style.opacity = "1";
-  btnClose.style.marginTop = "0%";
-  btnClose.style.borderBottom = "none";
+  const btnClose = document.getElementById("btnclosewindows");
+  document.getElementById("iWallpapers").classList.add("opened");
+  btnClose.classList.add("winOpened");
   document.body.style.overflowY = "hidden";
+
+  document.getElementById("plustitle").style.opacity = "0";
+  document.getElementById("plustitleAvatars").style.opacity = "1";
 }
