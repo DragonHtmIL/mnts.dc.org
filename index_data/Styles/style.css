@@ -52,6 +52,11 @@
   background-color: var(--thumb-bg);
   border: var(--thumb-border);
 }
+hr.rhr {
+  height: 3vmax;
+  flex-shrink: 1;
+  margin: auto 10px;
+}
 *::-webkit-scrollbar-thumb:hover {
   background-color: var(--thumb-hover-bg);
 }
@@ -91,7 +96,6 @@ footer img,
   padding: 5px;
   float: left;
   margin: 0;
-  border-right: solid 1px var(--border);
 }
 footer #txt1footer,
 .footer #txt1footer,
@@ -100,21 +104,75 @@ footer #txt1footer,
   width: auto;
   display: flex;
   padding-left: 5px;
-  border-left: solid 1px var(--border);
-  font-size: 3vw;
+  font-size: 1vw;
   flex-direction: column;
+  justify-content: center;
 }
-@media screen and (max-width: 376px) {
+footer #txt2footer,
+.footer #txt2footer,
+#footer #txt2footer {
+  height: 100%;
+  width: auto;
+  display: flex;
+  padding-left: 5px;
+  font-size: 1vw;
+  flex-direction: column;
+  justify-content: center;
+}
+.toast {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 12px 18px;
+  background: var(--subbg);
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 99999;
+}
+@media screen and (max-width: 768px) {
+  footer,
+  .footer,
+  #footer {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  footer img,
+  .footer img,
+  #footer img {
+    width: auto;
+    height: 100%;
+    padding: 5px;
+    float: none;
+    margin: auto;
+  }
   footer #txt1footer,
   .footer #txt1footer,
-  #footer #txt1footer {
-    font-size: 3vw;
+  #footer #txt1footer,
+  footer #txt2footer,
+  .footer #txt2footer,
+  #footer #txt2footer {
+    width: 100%;
+    flex-shrink: 1;
+    font-size: 2vmax;
+  }
+  hr.rhr {
+    width: calc(100% - 25px);
+    height: 2px;
+    float: right;
+    flex-shrink: 0;
+    margin: 10px auto;
   }
 }
-@media screen and (min-width: 870px) {
+/*@media screen and (min-width: 870px) {
   footer #txt1footer,
   .footer #txt1footer,
-  #footer #txt1footer {
+  #footer #txt1footer,
+  footer #txt2footer,
+  .footer #txt2footer,
+  #footer #txt2footer {
     font-size: 1.2vw;
   }
-}
+  hr.rhr {
+    height: 3.5vmax;
+  }
+}*/

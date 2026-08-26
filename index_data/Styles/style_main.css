@@ -82,6 +82,11 @@ button:hover {
   background-image: var(--close);
   filter: drop-shadow(0px 0px 6px transparent) grayscale(1);
   cursor: pointer;
+  opacity: 0;
+}
+#btnclosewindows.winOpened {
+  margin-top: 0% !important;
+  opacity: 1 !important;
 }
 #btnclosewindows:hover {
   filter: drop-shadow(0px 0px 6px var(--subcolor)) grayscale(0);
@@ -107,11 +112,19 @@ button:hover {
   border: none;
   position: fixed;
   bottom: 0;
+  right: -100%;
   display: flex;
   background-color: var(--background);
   z-index: 1;
   flex-direction: row;
   flex-wrap: nowrap;
+  opacity: 0;
+}
+#iStickers.opened,
+#iAvatars.opened,
+#iWallpapers.opened {
+  right: 0% !important;
+  opacity: 1;
 }
 footer,
 .footer,
