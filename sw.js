@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.dc.org';
 var APP_PREFIX = 'gppwa_';
-var VERSION = "0.1.8-26082026";
+var VERSION = "0.1.9-06092026";
 var URLS = [
   `${GHPATH}/index_data/Scripts/avatars/avatar_ai_loader.js`,
   `${GHPATH}/index_data/Scripts/avatars/avatar_animated_loader.js`,
@@ -14,12 +14,14 @@ var URLS = [
   `${GHPATH}/index_data/Scripts/errors.js`,
   `${GHPATH}/index_data/Scripts/loads.js`,
   `${GHPATH}/index_data/Scripts/page_icon_loader.js`,
-  `${GHPATH}/index_data/Scripts/variables.js`,
-  `${GHPATH}/index_data/Scripts/wndows_close.js`,
-  `${GHPATH}/index_data/Scripts/year.js`,
+  `${GHPATH}/index_data/Scripts/toast.js`,
+  `${GHPATH}/index_data/Scripts/main/mobile.js`,
   `${GHPATH}/index_data/Scripts/main/open_avatars.js`,
   `${GHPATH}/index_data/Scripts/main/open_stickers.js`,
   `${GHPATH}/index_data/Scripts/main/open_wallpapers.js`,
+  `${GHPATH}/index_data/Scripts/main/variables.js`,
+  `${GHPATH}/index_data/Scripts/main/wndows_close.js`,
+  `${GHPATH}/index_data/Scripts/main/year.js`,
   `${GHPATH}/index_data/Scripts/main`,
   `${GHPATH}/index_data/Scripts/stickers/sticker_cyrus_loader.js`,
   `${GHPATH}/index_data/Scripts/stickers/sticker_emoji_loader.js`,
@@ -56,6 +58,7 @@ var URLS = [
   `${GHPATH}/index_data/Scripts/wallpapers/paginations_controller.js`,
   `${GHPATH}/index_data/Scripts/wallpapers/wallpapers_ai_loader.js`,
   `${GHPATH}/index_data/Scripts/wallpapers/wallpapers_images_loader.js`,
+  `${GHPATH}/index_data/Scripts/wallpapers/wallpapers_video_loader.js`,
   `${GHPATH}/index_data/Scripts/wallpapers`,
   `${GHPATH}/index_data/Scripts/windows/copy_gif.js`,
   `${GHPATH}/index_data/Scripts/windows/copy_png.js`,
@@ -99,7 +102,10 @@ var URLS = [
   `${GHPATH}/index_data/Textures/icon_384.png`,
   `${GHPATH}/index_data/Textures/icon_512.png`,
   `${GHPATH}/index_data/Textures/logo.png`,
+  `${GHPATH}/index_data/Textures/logo_90.png`,
   `${GHPATH}/index_data/Textures/netease.png`,
+  `${GHPATH}/index_data/Textures/pause.png`,
+  `${GHPATH}/index_data/Textures/play.png`,
   `${GHPATH}/index_data/Textures`,
   `${GHPATH}/index_data`,
   `${GHPATH}/index.html`
