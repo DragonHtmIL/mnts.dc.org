@@ -1,19 +1,17 @@
 function showImageGif(gifs) {
-  var imagepreviewbase = document.getElementById("imagepreviewbasegif");
+  const imagepreviewbase = document.getElementById("imagepreviewbasegif");
   ex3.src = gifs.src;
   imagepreviewbase.style.right = "0%";
   document.body.style.overflowY = "hidden";
-  setTimeout(() => {
-    imagepreviewbase.style.backgroundColor = "var(--opacity-color)";
-    imagepreviewbase.style.backdropFilter = "blur(5px)";
-  },340);
+  document.getElementById("iStickers").style.opacity = "0";
+  document.getElementById("iAvatars").style.opacity = "0";
+  document.getElementById("iWallpapers").style.opacity = "0";
 };
 function closeImgPreviewGif() {
-  var imagepreviewbase = document.getElementById("imagepreviewbasegif");
-  imagepreviewbase.style.backgroundColor = "transparent";
-  imagepreviewbase.style.backdropFilter = "blur(0px)";
-  setTimeout(() => {
-    imagepreviewbase.style.right = "-100%";
-    document.body.style.overflowY = "auto";
-  },340);
+  const imagepreviewbase = document.getElementById("imagepreviewbasegif");
+  document.getElementById("iStickers").style.opacity = "1";
+  document.getElementById("iAvatars").style.opacity = "1";
+  document.getElementById("iWallpapers").style.opacity = "1";
+  imagepreviewbase.style.right = "-100%";
+  document.body.style.overflowY = "auto";
 }

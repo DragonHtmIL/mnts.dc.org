@@ -40,4 +40,5 @@ window.addEventListener('load', function() {
   updateUI();
   document.getElementById("num1").click();
   document.getElementById("numAI1").click();
+  document.getElementById("numVid1").click();
 });

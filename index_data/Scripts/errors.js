@@ -1,4 +1,3 @@
-function unknownError() {
-  let errorsCounts = 0;
-  console.log("An error is founded..." + errorsCounts + 1 + console.error());
-}
+window.addEventListener("error", function() {
+  showToast("An error occurred... will fixed soon.");
+});

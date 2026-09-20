@@ -1,19 +1,22 @@
-function showImageGif(videos) {
-  var imagepreviewbase = document.getElementById("imagepreviewbasevid");
+function showVideo(videos) {
+  const videopreviewbase = document.getElementById("videopreviewbase");
   ex4.src = videos.src;
-  imagepreviewbase.style.right = "0%";
+  videopreviewbase.style.right = "0%";
   document.body.style.overflowY = "hidden";
-  setTimeout(() => {
-    imagepreviewbase.style.backgroundColor = "var(--opacity-color)";
-    imagepreviewbase.style.backdropFilter = "blur(5px)";
-  },340);
+  document.getElementById("iStickers").style.opacity = "0";
+  document.getElementById("iAvatars").style.opacity = "0";
+  document.getElementById("iWallpapers").style.opacity = "0";
+  ex4.addEventListener('loadedmetadata', function() {
+    ex4.currentTime = 0;
+    ex4.play();
+  });
 };
-function closeImgPreviewVid() {
-  var imagepreviewbase = document.getElementById("imagepreviewbasevid");
-  imagepreviewbase.style.backgroundColor = "transparent";
-  imagepreviewbase.style.backdropFilter = "blur(0px)";
-  setTimeout(() => {
-    imagepreviewbase.style.right = "-100%";
-    document.body.style.overflowY = "auto";
-  },340);
+function closePreviewVid() {
+  const videopreviewbase = document.getElementById("videopreviewbase");
+  document.getElementById("iStickers").style.opacity = "1";
+  document.getElementById("iAvatars").style.opacity = "1";
+  document.getElementById("iWallpapers").style.opacity = "1";
+  videopreviewbase.style.right = "-100%";
+  document.body.style.overflowY = "auto";
+  ex4.pause();
 }

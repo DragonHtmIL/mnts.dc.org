@@ -1,11 +1,15 @@
 const copyButtonVid = document.getElementById('copyButtonVid');
 copyButtonVid.addEventListener('click', async () => {
-  const video = document.getElementById("expandedImgVid"); // Assuming you have a video element with this ID
+  const video = document.getElementById("expandedVid"); // Assuming you have a video element with this ID
   const videoUrl = video.src;
+  if (!video.complete) {
+    showToast("Video is still loading...");
+    return;
+  }
   try {
     await navigator.clipboard.writeText(videoUrl);
-    console.log('Video URL copied to clipboard!');
+    showToast("Video URL successfully copied to clipboard!");
   } catch (err) {
-    console.error('Failed to copy video URL: ', err);
+    showToast("Failed to copy video URL. " + err.message);
   }
 });

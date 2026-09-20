@@ -1,19 +1,17 @@
 function showImage(imgs) {
-  var imagepreviewbase = document.getElementById("imagepreviewbase");
+  const imagepreviewbase = document.getElementById("imagepreviewbase");
   ex2.src = imgs.src;
   imagepreviewbase.style.right = "0%";
   document.body.style.overflowY = "hidden";
-  setTimeout(() => {
-    imagepreviewbase.style.backgroundColor = "var(--opacity-color)";
-    imagepreviewbase.style.backdropFilter = "blur(5px)";
-  },340);
+  document.getElementById("iStickers").style.opacity = "0";
+  document.getElementById("iAvatars").style.opacity = "0";
+  document.getElementById("iWallpapers").style.opacity = "0";
 };
 function closeImgPreview() {
-  var imagepreviewbase = document.getElementById("imagepreviewbase");
-  imagepreviewbase.style.backgroundColor = "transparent";
-  imagepreviewbase.style.backdropFilter = "blur(0px)";
-  setTimeout(() => {
-    imagepreviewbase.style.right = "-100%";
-    document.body.style.overflowY = "auto";
-  },340);
+  const imagepreviewbase = document.getElementById("imagepreviewbase");
+  document.getElementById("iStickers").style.opacity = "1";
+  document.getElementById("iAvatars").style.opacity = "1";
+  document.getElementById("iWallpapers").style.opacity = "1";
+  imagepreviewbase.style.right = "-100%";
+  document.body.style.overflowY = "auto";
 };

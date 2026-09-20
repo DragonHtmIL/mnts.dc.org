@@ -114,11 +114,13 @@ button:hover {
   bottom: 0;
   right: -100%;
   display: flex;
-  background-color: var(--background);
+  background-color: transparent;
   z-index: 1;
   flex-direction: row;
   flex-wrap: nowrap;
   opacity: 0;
+  backdrop-filter: blur(10px);
+  border-left: solid 2px var(--border);
 }
 #iStickers.opened,
 #iAvatars.opened,
@@ -131,6 +133,16 @@ footer,
 #footer {
   position: fixed;
   bottom: 0;
+  opacity: 1;
+}
+.open-window {
+  opacity: 1;
+}
+footer.hide,
+.footer.hide,
+#footer.hide,
+.open-window.hide {
+  opacity: 0;
 }
 @media screen and (max-width: 500px) {
   #iStickers,
