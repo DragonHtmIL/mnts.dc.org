@@ -2,8 +2,8 @@ const copyButtonVid = document.getElementById('copyButtonVid');
 copyButtonVid.addEventListener('click', async () => {
   const video = document.getElementById("expandedVid"); // Assuming you have a video element with this ID
   const videoUrl = video.src;
-  if (!video.complete) {
-    showToast("Video is still loading...");
+  if (!video.src) {
+    showToast("No video selected.");
     return;
   }
   try {

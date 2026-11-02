@@ -1,7 +1,7 @@
 document.getElementById("downButtonVid").addEventListener("click", function () {
   const video = document.getElementById("expandedVid");
   const time = document.getElementById("downtime").value;
-  if (!video.complete) {
+  if (!video.currentSrc || video.readyState < HTMLMediaElement.HAVE_METADATA) {
     showToast("Video is still loading...");
     return;
   }
